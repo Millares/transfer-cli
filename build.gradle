@@ -1,0 +1,31 @@
+plugins {
+	id 'groovy'
+}
+
+repositories { 
+    maven {
+        url 'http://127.0.0.1:8081/repository/maven-all-uci/'
+    }
+}
+
+dependencies {
+	testCompile 'org.codehaus.groovy:groovy-all:2.4.8'
+    testCompile "org.spockframework:spock-core:1.1-groovy-2.4-rc-2"
+	compile 'org.codehaus.groovy:groovy-all:2.4.8'
+    compile 'javax.mail:mail:1.4.1'
+    compile 'org.apache.httpcomponents:httpclient:4.5.5'
+    compile 'org.apache.httpcomponents:httpmime:4.3.1'
+    compile 'commons-validator:commons-validator:1.4.0'
+}
+
+task fatjar(type: Jar) {
+	manifest {
+	    attributes 'Main-Class': 'org.iroko.transfer.Main'
+	}
+	from { 
+	    configurations
+	    	.runtime
+	    	.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+	with jar
+}
