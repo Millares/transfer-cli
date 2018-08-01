@@ -41,3 +41,4 @@ How to transfer-cli send the download link by mail? Really very easy, to start u
 
     yaourt -S transfer-cli
 
+*later it will be available in the command line as "transfer"*
