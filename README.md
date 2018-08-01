@@ -35,3 +35,9 @@ How to transfer-cli send the download link by mail? Really very easy, to start u
 
     java -jar transfer-cli.jar -F /file.mp3 -E friendemail@outlook.com -F ~/file.pdf -E otherfriend@gmail.com
 
+## For users of archlinux
+
+*You can find it in: [AUR](https://aur.archlinux.org/packages/transfer-cli/) or install it with yaourt or other*
+
+    yaourt -S transfer-cli
+
